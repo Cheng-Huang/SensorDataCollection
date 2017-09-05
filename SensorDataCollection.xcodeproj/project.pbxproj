@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14B7579029E35B827A7FBB27 /* libPods-SensorDataCollection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB5129E574024F60A1CA9B4 /* libPods-SensorDataCollection.a */; };
 		D236A1DE1F5D52B50093CD8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D236A1DD1F5D52B50093CD8B /* main.m */; };
 		D236A1E11F5D52B50093CD8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D236A1E01F5D52B50093CD8B /* AppDelegate.m */; };
 		D236A1E41F5D52B50093CD8B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236A1E31F5D52B50093CD8B /* ViewController.m */; };
 		D236A1E71F5D52B50093CD8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D236A1E51F5D52B50093CD8B /* Main.storyboard */; };
 		D236A1E91F5D52B50093CD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D236A1E81F5D52B50093CD8B /* Assets.xcassets */; };
 		D236A1EC1F5D52B50093CD8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D236A1EA1F5D52B50093CD8B /* LaunchScreen.storyboard */; };
+		D236A1F51F5D83950093CD8B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D236A1F41F5D83950093CD8B /* MapKit.framework */; };
+		D236A1F81F5D8DB30093CD8B /* DataSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = D236A1F71F5D8DB30093CD8B /* DataSaver.m */; };
+		D236A1FB1F5D93260093CD8B /* SensorData.m in Sources */ = {isa = PBXBuildFile; fileRef = D236A1FA1F5D93260093CD8B /* SensorData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AA4681BFAD73D7FABAA6BF3 /* Pods-SensorDataCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorDataCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensorDataCollection/Pods-SensorDataCollection.debug.xcconfig"; sourceTree = "<group>"; };
+		A56C723FFE19DE1EEE8FB9BC /* Pods-SensorDataCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorDataCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensorDataCollection/Pods-SensorDataCollection.release.xcconfig"; sourceTree = "<group>"; };
+		BAB5129E574024F60A1CA9B4 /* libPods-SensorDataCollection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SensorDataCollection.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D236A1D91F5D52B50093CD8B /* SensorDataCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorDataCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D236A1DD1F5D52B50093CD8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D236A1DF1F5D52B50093CD8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +33,11 @@
 		D236A1E81F5D52B50093CD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D236A1EB1F5D52B50093CD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D236A1ED1F5D52B50093CD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D236A1F41F5D83950093CD8B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D236A1F61F5D8DB30093CD8B /* DataSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSaver.h; sourceTree = "<group>"; };
+		D236A1F71F5D8DB30093CD8B /* DataSaver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSaver.m; sourceTree = "<group>"; };
+		D236A1F91F5D93260093CD8B /* SensorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorData.h; sourceTree = "<group>"; };
+		D236A1FA1F5D93260093CD8B /* SensorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +45,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D236A1F51F5D83950093CD8B /* MapKit.framework in Frameworks */,
+				14B7579029E35B827A7FBB27 /* libPods-SensorDataCollection.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C34FED72C8460C51CDD4D18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AA4681BFAD73D7FABAA6BF3 /* Pods-SensorDataCollection.debug.xcconfig */,
+				A56C723FFE19DE1EEE8FB9BC /* Pods-SensorDataCollection.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D236A1D01F5D52B50093CD8B = {
 			isa = PBXGroup;
 			children = (
 				D236A1DB1F5D52B50093CD8B /* SensorDataCollection */,
 				D236A1DA1F5D52B50093CD8B /* Products */,
+				D236A1F31F5D83950093CD8B /* Frameworks */,
+				0C34FED72C8460C51CDD4D18 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +87,10 @@
 				D236A1E01F5D52B50093CD8B /* AppDelegate.m */,
 				D236A1E21F5D52B50093CD8B /* ViewController.h */,
 				D236A1E31F5D52B50093CD8B /* ViewController.m */,
+				D236A1F91F5D93260093CD8B /* SensorData.h */,
+				D236A1FA1F5D93260093CD8B /* SensorData.m */,
+				D236A1F61F5D8DB30093CD8B /* DataSaver.h */,
+				D236A1F71F5D8DB30093CD8B /* DataSaver.m */,
 				D236A1E51F5D52B50093CD8B /* Main.storyboard */,
 				D236A1E81F5D52B50093CD8B /* Assets.xcassets */,
 				D236A1EA1F5D52B50093CD8B /* LaunchScreen.storyboard */,
@@ -79,6 +108,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D236A1F31F5D83950093CD8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D236A1F41F5D83950093CD8B /* MapKit.framework */,
+				BAB5129E574024F60A1CA9B4 /* libPods-SensorDataCollection.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +124,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D236A1F01F5D52B50093CD8B /* Build configuration list for PBXNativeTarget "SensorDataCollection" */;
 			buildPhases = (
+				E77014CBD7E388A13D9FC8AE /* [CP] Check Pods Manifest.lock */,
 				D236A1D51F5D52B50093CD8B /* Sources */,
 				D236A1D61F5D52B50093CD8B /* Frameworks */,
 				D236A1D71F5D52B50093CD8B /* Resources */,
+				6BD8A7CAB6C5EB81856B0064 /* [CP] Embed Pods Frameworks */,
+				5F54B4266A4808010FE66565 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -105,12 +146,21 @@
 		D236A1D11F5D52B50093CD8B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "成 黄";
 				TargetAttributes = {
 					D236A1D81F5D52B50093CD8B = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = U887WFGWN9;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -145,12 +195,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5F54B4266A4808010FE66565 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorDataCollection/Pods-SensorDataCollection-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BD8A7CAB6C5EB81856B0064 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorDataCollection/Pods-SensorDataCollection-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E77014CBD7E388A13D9FC8AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SensorDataCollection-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D236A1D51F5D52B50093CD8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D236A1E41F5D52B50093CD8B /* ViewController.m in Sources */,
+				D236A1FB1F5D93260093CD8B /* SensorData.m in Sources */,
+				D236A1F81F5D8DB30093CD8B /* DataSaver.m in Sources */,
 				D236A1E11F5D52B50093CD8B /* AppDelegate.m in Sources */,
 				D236A1DE1F5D52B50093CD8B /* main.m in Sources */,
 			);
@@ -187,7 +290,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -195,7 +300,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -235,7 +344,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -243,7 +354,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -270,22 +385,28 @@
 		};
 		D236A1F11F5D52B50093CD8B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AA4681BFAD73D7FABAA6BF3 /* Pods-SensorDataCollection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U887WFGWN9;
 				INFOPLIST_FILE = SensorDataCollection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huangcheng.SensorDataCollection;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenghuang.SensorDataCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		D236A1F21F5D52B50093CD8B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A56C723FFE19DE1EEE8FB9BC /* Pods-SensorDataCollection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U887WFGWN9;
 				INFOPLIST_FILE = SensorDataCollection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huangcheng.SensorDataCollection;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenghuang.SensorDataCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -309,6 +430,7 @@
 				D236A1F21F5D52B50093CD8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,16 +7,22 @@
 //
 
 #import "AppDelegate.h"
+#import <GCDWebDAVServer.h>
 
 @interface AppDelegate ()
-
+{
+    GCDWebDAVServer* _davServer;
+}
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    _davServer = [[GCDWebDAVServer alloc] initWithUploadDirectory:documentsPath];
+    [_davServer start];
+    NSLog(@"服务启动成功，使用你的WebDAV客户端访问：%@", _davServer.serverURL);
     return YES;
 }
 
