@@ -59,6 +59,8 @@
             //定位初始化
             _locationManager = [[CLLocationManager alloc] init];
             _locationManager.delegate = self;
+            _locationManager.allowsBackgroundLocationUpdates = YES; //允许后台刷新
+            _locationManager.pausesLocationUpdatesAutomatically = NO; //不允许自动暂停刷新
             _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
             _locationManager.distanceFilter = kCLDistanceFilterNone;
             [_locationManager requestWhenInUseAuthorization];//使用程序其间允许访问位置数据（iOS8定位需要）
