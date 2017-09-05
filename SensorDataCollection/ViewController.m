@@ -50,73 +50,6 @@
 
 @implementation ViewController
 
-#pragma mark - Lazy init
-
-- (CLLocationManager *)locationManager {
-    if (!_locationManager) {
-        // 判断定位操作是否被允许
-        if([CLLocationManager locationServicesEnabled]) {
-            //定位初始化
-            _locationManager = [[CLLocationManager alloc] init];
-            _locationManager.delegate = self;
-            _locationManager.allowsBackgroundLocationUpdates = YES; //允许后台刷新
-            _locationManager.pausesLocationUpdatesAutomatically = NO; //不允许自动暂停刷新
-            _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-            _locationManager.distanceFilter = kCLDistanceFilterNone;
-            [_locationManager requestWhenInUseAuthorization];//使用程序其间允许访问位置数据（iOS8定位需要）
-        } else {
-            //提示用户无法进行定位操作
-            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"定位不成功 ,请确认开启定位" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-            [alertView show];
-        }
-    }
-    return _locationManager;
-}
-
-- (CMMotionManager *)motionManger {
-    if (!_motionManger) {
-        _motionManger = [[CMMotionManager alloc] init];
-    }
-    return _motionManger;
-}
-
-- (CMPedometer *)pedometer {
-    if (!_pedometer) {
-        _pedometer = [[CMPedometer alloc] init];
-    }
-    return _pedometer;
-}
-
-- (CMAltimeter *)altimeter {
-    if (!_altimeter) {
-        _altimeter = [[CMAltimeter alloc] init];
-    }
-    return _altimeter;
-}
-
-- (SensorData *)sensorData {
-    if (!_sensorData) {
-        _sensorData = [[SensorData alloc] init];
-    }
-    return _sensorData;
-}
-
-- (DataSaver *)dataSaver {
-    if (!_dataSaver) {
-        _dataSaver = [[DataSaver alloc] init];
-    }
-    return _dataSaver;
-}
-
-- (NSTimer *)autoSaver {
-    if (!_autoSaver) {
-        _autoSaver = [NSTimer scheduledTimerWithTimeInterval:AutoSaveInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
-            [self.dataSaver saveSensorData:self.sensorData];
-        }];
-    }
-    return _autoSaver;
-}
-
 #pragma mark - MKMapView Delegate
 /**
  *  更新到用户的位置时就会调用(显示的位置、显示范围改变)
@@ -140,7 +73,6 @@
     CLLocation *loc = [locations firstObject];
 
     NSLog(@"纬度=%f，经度=%f", loc.coordinate.latitude, loc.coordinate.longitude);
-    NSLog(@"%lu",(unsigned long)locations.count);
     self.sensorData.longitude = loc.coordinate.longitude;
     self.sensorData.latitude = loc.coordinate.latitude;
     
@@ -266,6 +198,73 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Lazy init
+
+- (CLLocationManager *)locationManager {
+    if (!_locationManager) {
+        // 判断定位操作是否被允许
+        if([CLLocationManager locationServicesEnabled]) {
+            //定位初始化
+            _locationManager = [[CLLocationManager alloc] init];
+            _locationManager.delegate = self;
+            _locationManager.allowsBackgroundLocationUpdates = YES; //允许后台刷新
+            _locationManager.pausesLocationUpdatesAutomatically = NO; //不允许自动暂停刷新
+            _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+            _locationManager.distanceFilter = kCLDistanceFilterNone;
+            [_locationManager requestWhenInUseAuthorization];//使用程序其间允许访问位置数据（iOS8定位需要）
+        } else {
+            //提示用户无法进行定位操作
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"定位不成功 ,请确认开启定位" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+            [alertView show];
+        }
+    }
+    return _locationManager;
+}
+
+- (CMMotionManager *)motionManger {
+    if (!_motionManger) {
+        _motionManger = [[CMMotionManager alloc] init];
+    }
+    return _motionManger;
+}
+
+- (CMPedometer *)pedometer {
+    if (!_pedometer) {
+        _pedometer = [[CMPedometer alloc] init];
+    }
+    return _pedometer;
+}
+
+- (CMAltimeter *)altimeter {
+    if (!_altimeter) {
+        _altimeter = [[CMAltimeter alloc] init];
+    }
+    return _altimeter;
+}
+
+- (SensorData *)sensorData {
+    if (!_sensorData) {
+        _sensorData = [[SensorData alloc] init];
+    }
+    return _sensorData;
+}
+
+- (DataSaver *)dataSaver {
+    if (!_dataSaver) {
+        _dataSaver = [[DataSaver alloc] init];
+    }
+    return _dataSaver;
+}
+
+- (NSTimer *)autoSaver {
+    if (!_autoSaver) {
+        _autoSaver = [NSTimer scheduledTimerWithTimeInterval:AutoSaveInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
+            [self.dataSaver saveSensorData:self.sensorData];
+        }];
+    }
+    return _autoSaver;
 }
 
 

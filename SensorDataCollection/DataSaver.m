@@ -56,19 +56,20 @@
         // 初始化数据表
         NSString *sql = @"CREATE TABLE 'SenserData' \
         ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,\
-        'timestamp'     DATETIME,\
-        'device_id'     TEXT,\
-        'longitude'     REAL,\
-        'latitude'      REAL,\
-        'acc_x'         REAL,\
-        'acc_y'         REAL,\
-        'acc_z'         REAL,\
-        'step'          INETGER,\
-        'distance'      REAL,\
-        'floor_asce'    INETGER,\
-        'floor_desc'    INETGER,\
-        'meter_per_sec' REAL,\
-        'step_per_sec'  REAL) ";
+        'timestamp'         DATETIME,\
+        'device_id'         TEXT,\
+        'longitude'         REAL,\
+        'latitude'          REAL,\
+        'relative_altitude' REAL,\
+        'acc_x'             REAL,\
+        'acc_y'             REAL,\
+        'acc_z'             REAL,\
+        'step'              INETGER,\
+        'distance'          REAL,\
+        'floor_asce'        INETGER,\
+        'floor_desc'        INETGER,\
+        'meter_per_sec'     REAL,\
+        'step_per_sec'      REAL) ";
         
         [_db executeUpdate:sql];
         
@@ -82,7 +83,7 @@
     [self.db open];
 
     [self.queue inDatabase:^(FMDatabase *db) {
-        [db executeUpdate:@"INSERT INTO SenserData (timestamp,device_id,longitude,latitude,acc_x,acc_y,acc_z,step,distance,floor_asce,floor_desc,meter_per_sec,step_per_sec) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)", [NSDate date], [[[UIDevice currentDevice] identifierForVendor] UUIDString], @(sensorData.longitude), @(sensorData.latitude), @(sensorData.accX), @(sensorData.accY), @(sensorData.accZ), @(sensorData.step), @(sensorData.distance), @(sensorData.floorsAscended), @(sensorData.floorsDescended), @(sensorData.meterPerSec), @(sensorData.stepPerSec)];
+        [db executeUpdate:@"INSERT INTO SenserData (timestamp,device_id,longitude,latitude,relative_altitude,acc_x,acc_y,acc_z,step,distance,floor_asce,floor_desc,meter_per_sec,step_per_sec) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [NSDate date], [[[UIDevice currentDevice] identifierForVendor] UUIDString], @(sensorData.longitude), @(sensorData.latitude), @(sensorData.relativeAltitude), @(sensorData.accX), @(sensorData.accY), @(sensorData.accZ), @(sensorData.step), @(sensorData.distance), @(sensorData.floorsAscended), @(sensorData.floorsDescended), @(sensorData.meterPerSec), @(sensorData.stepPerSec)];
     }];
     
     [self.db close];

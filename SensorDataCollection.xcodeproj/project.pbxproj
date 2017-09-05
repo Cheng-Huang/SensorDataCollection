@@ -151,7 +151,7 @@
 				TargetAttributes = {
 					D236A1D81F5D52B50093CD8B = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = U887WFGWN9;
+						DevelopmentTeam = GFZ6TKZ8PT;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -388,11 +388,11 @@
 			baseConfigurationReference = 2AA4681BFAD73D7FABAA6BF3 /* Pods-SensorDataCollection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U887WFGWN9;
+				DEVELOPMENT_TEAM = GFZ6TKZ8PT;
 				INFOPLIST_FILE = SensorDataCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chenghuang.SensorDataCollection;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.chenghuang.SensorDataCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -402,11 +402,11 @@
 			baseConfigurationReference = A56C723FFE19DE1EEE8FB9BC /* Pods-SensorDataCollection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U887WFGWN9;
+				DEVELOPMENT_TEAM = GFZ6TKZ8PT;
 				INFOPLIST_FILE = SensorDataCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chenghuang.SensorDataCollection;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.chenghuang.SensorDataCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
