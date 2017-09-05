@@ -29,10 +29,27 @@
                                 </connections>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xzl-FC-FVb">
-                                <rect key="frame" x="16" y="20" width="343" height="246"/>
+                                <rect key="frame" x="16" y="20" width="343" height="266.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abH-TB-Iz9">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ro8-J5-Avd">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="DAV：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxB-Iv-dtY">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK2-gh-oOW">
+                                                <rect key="frame" x="50" y="0.0" width="293" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abH-TB-Iz9">
+                                        <rect key="frame" x="0.0" y="20.5" width="343" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="经度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80j-TX-o0S">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
@@ -49,7 +66,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4c-fU-jkS">
-                                        <rect key="frame" x="0.0" y="20.5" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="41" width="343" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="纬度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9H-nu-Sfo">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
@@ -66,7 +83,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utf-u0-goP">
-                                        <rect key="frame" x="0.0" y="41" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="61.5" width="343" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="相对海拔：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScM-k8-4UZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="87" height="20.5"/>
@@ -83,7 +100,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiA-ES-aFb">
-                                        <rect key="frame" x="0.0" y="61.5" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="82" width="343" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="加速度X：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dif-HZ-QIU">
                                                 <rect key="frame" x="0.0" y="0.0" width="80.5" height="20.5"/>
@@ -100,7 +117,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UD2-Ap-O3U">
-                                        <rect key="frame" x="0.0" y="82" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="102.5" width="343" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="加速度Y：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XF-lO-Egc">
                                                 <rect key="frame" x="0.0" y="0.0" width="80.5" height="20.5"/>
@@ -117,7 +134,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMj-Te-gw4">
-                                        <rect key="frame" x="0.0" y="102.5" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="123" width="343" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="加速度Z：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zB-Y6-WZ9">
                                                 <rect key="frame" x="0.0" y="0.0" width="80.5" height="20.5"/>
@@ -134,7 +151,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtB-y0-0Jv">
-                                        <rect key="frame" x="0.0" y="123" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="143.5" width="343" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="步数：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RP-hv-oTX">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
@@ -151,7 +168,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpe-7c-LIp">
-                                        <rect key="frame" x="0.0" y="143.5" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="164" width="343" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="距离：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ac-7I-CXl">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
@@ -168,7 +185,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dy5-y8-eBj">
-                                        <rect key="frame" x="0.0" y="164" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="184.5" width="343" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="上楼：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrN-cL-uqI">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
@@ -185,7 +202,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsD-ZN-W3o">
-                                        <rect key="frame" x="0.0" y="184.5" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="205" width="343" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="下楼：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvJ-SF-Jyr">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
@@ -202,7 +219,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqq-Yq-Zzg">
-                                        <rect key="frame" x="0.0" y="205" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="225.5" width="343" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="速度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCg-De-0Qd">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
@@ -219,7 +236,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCV-bx-H8A">
-                                        <rect key="frame" x="0.0" y="225.5" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="246" width="343" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="速度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsJ-f9-9SP">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
@@ -271,6 +288,7 @@
                         <outlet property="XLabel" destination="LYK-rB-eeM" id="7Eu-Ed-G27"/>
                         <outlet property="YLabel" destination="C4h-LG-nNt" id="NXf-Lb-RJ6"/>
                         <outlet property="ZLabel" destination="er9-Mk-1I6" id="ziy-1x-MDK"/>
+                        <outlet property="davLabel" destination="rK2-gh-oOW" id="dDq-XC-Rea"/>
                         <outlet property="distanceLabel" destination="lyZ-Wx-NLJ" id="PEW-OO-iFW"/>
                         <outlet property="floorsAscendedLabel" destination="tV9-SL-cHO" id="SSj-fS-43w"/>
                         <outlet property="floorsDescendedLabel" destination="kZV-0n-EPJ" id="GKg-78-TY0"/>

@@ -23,6 +23,8 @@
     _davServer = [[GCDWebDAVServer alloc] initWithUploadDirectory:documentsPath];
     [_davServer start];
     NSLog(@"服务启动成功，使用你的WebDAV客户端访问：%@", _davServer.serverURL);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[_davServer.serverURL absoluteString] forKey:@"serverURL"];
     return YES;
 }
 

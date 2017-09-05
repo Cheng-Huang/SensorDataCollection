@@ -17,6 +17,7 @@
 #define AccUpdateInterval 1.0
 
 @interface ViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *davLabel;
 @property (weak, nonatomic) IBOutlet UILabel *LongitudeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *latitudeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *relativeAltitudeLabel;
@@ -221,8 +222,8 @@
                     self.distanceLabel.text = [NSString stringWithFormat:@"%@",pedometerData.distance];
                     self.floorsAscendedLabel.text = [NSString stringWithFormat:@"%@",pedometerData.floorsAscended];
                     self.floorsDescendedLabel.text = [NSString stringWithFormat:@"%@",pedometerData.floorsDescended];
-                    self.meterPerSecLabel.text = [NSString stringWithFormat:@"%@ m/s",pedometerData.currentPace];
-                    self.stepPerSecLabel.text = [NSString stringWithFormat:@"%@ step/s",pedometerData.currentCadence];
+                    self.meterPerSecLabel.text = [NSString stringWithFormat:@"%@ m/s",pedometerData.currentPace ? pedometerData.currentPace : @(0)];
+                    self.stepPerSecLabel.text = [NSString stringWithFormat:@"%@ step/s",pedometerData.currentCadence ? pedometerData.currentCadence : @(0)];
                 });
             }
         }];
@@ -256,6 +257,8 @@
     
     // 3.设置代理（监控地图的相关行为：比如显示的区域发生了改变）
     self.mapView.delegate = self;
+    
+    self.davLabel.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"serverURL"];
 }
 
 - (void)didReceiveMemoryWarning {
