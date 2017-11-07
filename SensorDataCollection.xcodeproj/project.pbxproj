@@ -17,6 +17,10 @@
 		D236A1F51F5D83950093CD8B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D236A1F41F5D83950093CD8B /* MapKit.framework */; };
 		D236A1F81F5D8DB30093CD8B /* DataSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = D236A1F71F5D8DB30093CD8B /* DataSaver.m */; };
 		D236A1FB1F5D93260093CD8B /* SensorData.m in Sources */ = {isa = PBXBuildFile; fileRef = D236A1FA1F5D93260093CD8B /* SensorData.m */; };
+		D2502F691FB0B90E00581539 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2502F681FB0B90E00581539 /* BaseViewController.m */; };
+		D2502F6D1FB15A7800581539 /* CatchCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = D2502F6C1FB15A7800581539 /* CatchCrash.m */; };
+		D270CC511FB0ADAE003FC91E /* iQiYiPlayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D270CC501FB0ADAE003FC91E /* iQiYiPlayButton.m */; };
+		D2B8FEE21FB0923C002DA84D /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B8FEE11FB0923C002DA84D /* HistoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,15 @@
 		D236A1F71F5D8DB30093CD8B /* DataSaver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSaver.m; sourceTree = "<group>"; };
 		D236A1F91F5D93260093CD8B /* SensorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorData.h; sourceTree = "<group>"; };
 		D236A1FA1F5D93260093CD8B /* SensorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorData.m; sourceTree = "<group>"; };
+		D2502F671FB0B90E00581539 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		D2502F681FB0B90E00581539 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		D2502F6A1FB0B97200581539 /* PrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
+		D2502F6B1FB15A7800581539 /* CatchCrash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatchCrash.h; sourceTree = "<group>"; };
+		D2502F6C1FB15A7800581539 /* CatchCrash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatchCrash.m; sourceTree = "<group>"; };
+		D270CC4F1FB0ADA8003FC91E /* iQiYiPlayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iQiYiPlayButton.h; sourceTree = "<group>"; };
+		D270CC501FB0ADAE003FC91E /* iQiYiPlayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iQiYiPlayButton.m; sourceTree = "<group>"; };
+		D2B8FEE01FB0923C002DA84D /* HistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		D2B8FEE11FB0923C002DA84D /* HistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,17 +98,26 @@
 			children = (
 				D236A1DF1F5D52B50093CD8B /* AppDelegate.h */,
 				D236A1E01F5D52B50093CD8B /* AppDelegate.m */,
+				D2502F671FB0B90E00581539 /* BaseViewController.h */,
+				D2502F681FB0B90E00581539 /* BaseViewController.m */,
 				D236A1E21F5D52B50093CD8B /* ViewController.h */,
 				D236A1E31F5D52B50093CD8B /* ViewController.m */,
+				D270CC4F1FB0ADA8003FC91E /* iQiYiPlayButton.h */,
+				D270CC501FB0ADAE003FC91E /* iQiYiPlayButton.m */,
+				D2B8FEE01FB0923C002DA84D /* HistoryViewController.h */,
+				D2B8FEE11FB0923C002DA84D /* HistoryViewController.m */,
 				D236A1F91F5D93260093CD8B /* SensorData.h */,
 				D236A1FA1F5D93260093CD8B /* SensorData.m */,
 				D236A1F61F5D8DB30093CD8B /* DataSaver.h */,
 				D236A1F71F5D8DB30093CD8B /* DataSaver.m */,
+				D2502F6A1FB0B97200581539 /* PrefixHeader.h */,
 				D236A1E51F5D52B50093CD8B /* Main.storyboard */,
 				D236A1E81F5D52B50093CD8B /* Assets.xcassets */,
 				D236A1EA1F5D52B50093CD8B /* LaunchScreen.storyboard */,
 				D236A1ED1F5D52B50093CD8B /* Info.plist */,
 				D236A1DC1F5D52B50093CD8B /* Supporting Files */,
+				D2502F6B1FB15A7800581539 /* CatchCrash.h */,
+				D2502F6C1FB15A7800581539 /* CatchCrash.m */,
 			);
 			path = SensorDataCollection;
 			sourceTree = "<group>";
@@ -151,7 +173,7 @@
 				TargetAttributes = {
 					D236A1D81F5D52B50093CD8B = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = GFZ6TKZ8PT;
+						DevelopmentTeam = U887WFGWN9;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -251,11 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2502F6D1FB15A7800581539 /* CatchCrash.m in Sources */,
 				D236A1E41F5D52B50093CD8B /* ViewController.m in Sources */,
+				D2502F691FB0B90E00581539 /* BaseViewController.m in Sources */,
 				D236A1FB1F5D93260093CD8B /* SensorData.m in Sources */,
+				D270CC511FB0ADAE003FC91E /* iQiYiPlayButton.m in Sources */,
 				D236A1F81F5D8DB30093CD8B /* DataSaver.m in Sources */,
 				D236A1E11F5D52B50093CD8B /* AppDelegate.m in Sources */,
 				D236A1DE1F5D52B50093CD8B /* main.m in Sources */,
+				D2B8FEE21FB0923C002DA84D /* HistoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +414,9 @@
 			baseConfigurationReference = 2AA4681BFAD73D7FABAA6BF3 /* Pods-SensorDataCollection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GFZ6TKZ8PT;
+				DEVELOPMENT_TEAM = U887WFGWN9;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = SensorDataCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -402,7 +430,9 @@
 			baseConfigurationReference = A56C723FFE19DE1EEE8FB9BC /* Pods-SensorDataCollection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GFZ6TKZ8PT;
+				DEVELOPMENT_TEAM = U887WFGWN9;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = SensorDataCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

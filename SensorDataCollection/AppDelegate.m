@@ -7,11 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "PrefixHeader.h"
+#import "CatchCrash.h"
 #import <GCDWebDAVServer.h>
 
 @interface AppDelegate ()
 {
     GCDWebDAVServer* _davServer;
+    DDFileLogger * _fileLogger;
 }
 @end
 
@@ -22,9 +25,24 @@
     NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     _davServer = [[GCDWebDAVServer alloc] initWithUploadDirectory:documentsPath];
     [_davServer start];
-    NSLog(@"服务启动成功，使用你的WebDAV客户端访问：%@", _davServer.serverURL);
+    DDLogDebug(@"服务启动成功，使用你的WebDAV客户端访问：%@", _davServer.serverURL);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[_davServer.serverURL absoluteString] forKey:@"serverURL"];
+    
+    // 日志
+//    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    id<DDLogFileManager> logFileManager = [[DDLogFileManagerDefault alloc] initWithLogsDirectory:documentsPath];
+    _fileLogger = [[DDFileLogger alloc] initWithLogFileManager:logFileManager];
+//    _fileLogger = [[DDFileLogger alloc] init];
+    _fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+    _fileLogger.logFileManager.maximumNumberOfLogFiles = 7; //保持一周的日志文件
+    [DDLog addLogger:_fileLogger];
+    
+    //注册消息处理函数的处理方法
+    //如此一来，程序崩溃时会自动进入CatchCrash.m的uncaughtExceptionHandler()方法
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    
     return YES;
 }
 

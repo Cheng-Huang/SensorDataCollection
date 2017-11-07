@@ -10,5 +10,7 @@
 @class SensorData;
 
 @interface DataSaver : NSObject
++ (instancetype)sharedInstance;
++ (void)refreshDatabaseFile;
 - (void)saveSensorData:(SensorData *)sensorData;
 @end

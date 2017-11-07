@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "iQiYiPlayButton.h"
 #import "SensorData.h"
 #import "DataSaver.h"
 #import <CoreLocation/CoreLocation.h>
@@ -31,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *meterPerSecLabel;
 @property (weak, nonatomic) IBOutlet UILabel *stepPerSecLabel;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+/** 记录按钮 */
+@property (strong, nonatomic) iQiYiPlayButton *playButton;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CMMotionManager *motionManger;
@@ -72,7 +75,7 @@
     //locations数组里边存放的是CLLocation对象，一个CLLocation对象就代表着一个位置
     CLLocation *loc = [locations firstObject];
 
-    NSLog(@"纬度=%f，经度=%f", loc.coordinate.latitude, loc.coordinate.longitude);
+    DDLogInfo(@"纬度=%f，经度=%f", loc.coordinate.latitude, loc.coordinate.longitude);
     self.sensorData.longitude = loc.coordinate.longitude;
     self.sensorData.latitude = loc.coordinate.latitude;
     
@@ -81,8 +84,20 @@
 }
 
 #pragma mark - Actions
+- (void)playButtonClicked {
+    if (iQiYiPlayButtonStatePlay == self.playButton.buttonState) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self performSelector:@selector(thisMthodDoesNotExist) withObject:nil];
+        });
+        [self startMonitor];
+        self.playButton.buttonState = iQiYiPlayButtonStatePause;
+    } else {
+        [self stopMonitor];
+        self.playButton.buttonState = iQiYiPlayButtonStatePlay;
+    }
+}
 
-- (IBAction)startButtonClicked:(id)sender {
+- (void)startMonitor {
     [self.locationManager startUpdatingLocation];
     [self startUpdateACC];
     [self startUpdatePedo];
@@ -90,7 +105,7 @@
     [self.autoSaver fire];
 }
 
-- (IBAction)stopButtonClicked:(id)sender {
+- (void)stopMonitor {
     [self.locationManager stopUpdatingLocation];
     if (self.motionManger.isAccelerometerActive) {
         [self.motionManger stopAccelerometerUpdates];
@@ -110,7 +125,7 @@
         self.motionManger.accelerometerUpdateInterval = AccUpdateInterval;
         [self.motionManger startAccelerometerUpdatesToQueue:[NSOperationQueue new] withHandler:^(CMAccelerometerData * _Nullable accelerometerData, NSError * _Nullable error) {
             if (error) {
-                NSLog(@"出错 %@",error);
+                DDLogError(@"出错 %@",error);
             }else{
                 CGFloat X=accelerometerData.acceleration.x;
                 CGFloat Y=accelerometerData.acceleration.y;
@@ -120,7 +135,7 @@
                 self.sensorData.accY = Y;
                 self.sensorData.accZ = Z;
                 
-                NSLog(@"x轴:%f y轴:%f z轴:%f",X,Y,Z);
+                DDLogInfo(@"x轴:%f y轴:%f z轴:%f",X,Y,Z);
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.XLabel.text = [NSString stringWithFormat:@"%f", X];
@@ -138,11 +153,11 @@
         //开始计步
         [self.pedometer startPedometerUpdatesFromDate:[NSDate date] withHandler:^(CMPedometerData * _Nullable pedometerData, NSError * _Nullable error) {
             if (error) {
-                NSLog(@"error: %@",error);
+                DDLogError(@"error: %@",error);
             }else {
-                NSLog(@"步数：%@ 距离：%@", pedometerData.numberOfSteps, pedometerData.distance);
-                NSLog(@"上楼：%@ 下楼：%@", pedometerData.floorsAscended, pedometerData.floorsDescended);
-                NSLog(@"速度：%@ m/s 速度：%@ step/s", pedometerData.currentPace, pedometerData.currentCadence);
+                DDLogInfo(@"步数：%@ 距离：%@", pedometerData.numberOfSteps, pedometerData.distance);
+                DDLogInfo(@"上楼：%@ 下楼：%@", pedometerData.floorsAscended, pedometerData.floorsDescended);
+                DDLogInfo(@"速度：%@ m/s 速度：%@ step/s", pedometerData.currentPace, pedometerData.currentCadence);
                 
                 self.sensorData.step = pedometerData.numberOfSteps.integerValue;
                 self.sensorData.distance = pedometerData.distance.doubleValue;
@@ -169,7 +184,7 @@
         NSOperationQueue *queue = [[NSOperationQueue alloc] init];
         [self.altimeter startRelativeAltitudeUpdatesToQueue:queue withHandler:^(CMAltitudeData * _Nullable altitudeData, NSError * _Nullable error) {
             if (error) {
-                NSLog(@"出错 %@",error);
+                DDLogError(@"出错 %@",error);
             }
             self.sensorData.relativeAltitude = altitudeData.relativeAltitude.doubleValue;
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -193,11 +208,24 @@
     self.mapView.delegate = self;
     
     self.davLabel.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"serverURL"];
+    
+    self.title = @"数据收集";
+    self.playButton = [[iQiYiPlayButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60, SCREEN_HEIGHT-60, 40, 40) state:iQiYiPlayButtonStatePlay];
+    [self.playButton addTarget:self action:@selector(playButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.playButton];
+}
+
+- (void)viewDidLayoutSubviews {
+    self.playButton.frame = CGRectMake(SCREEN_WIDTH-60, SCREEN_HEIGHT-60, 40, 40);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    DDLogDebug(@"ViewController is Dead");
 }
 
 #pragma mark - Lazy init
@@ -216,8 +244,12 @@
             [_locationManager requestWhenInUseAuthorization];//使用程序其间允许访问位置数据（iOS8定位需要）
         } else {
             //提示用户无法进行定位操作
-            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"定位不成功 ,请确认开启定位" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-            [alertView show];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"定位不成功 ,请确认开启定位" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [alertController addAction:cancelAction];
+            [alertController addAction:okAction];
+            [self presentViewController:alertController animated:YES completion:nil];
         }
     }
     return _locationManager;
@@ -253,7 +285,7 @@
 
 - (DataSaver *)dataSaver {
     if (!_dataSaver) {
-        _dataSaver = [[DataSaver alloc] init];
+        _dataSaver = [DataSaver sharedInstance];
     }
     return _dataSaver;
 }
