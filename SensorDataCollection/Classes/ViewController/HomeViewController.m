@@ -1,12 +1,12 @@
 //
-//  ViewController.m
+//  HomeViewController.m
 //  SensorDataCollection
 //
 //  Created by 成 黄 on 2017/9/4.
 //  Copyright © 2017年 成 黄. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "HomeViewController.h"
 #import "iQiYiPlayButton.h"
 #import "SensorData.h"
 #import "DataSaver.h"
@@ -17,7 +17,7 @@
 #define AutoSaveInterval 1.0
 #define AccUpdateInterval 1.0
 
-@interface ViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
+@interface HomeViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *davLabel;
 @property (weak, nonatomic) IBOutlet UILabel *LongitudeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *latitudeLabel;
@@ -51,7 +51,7 @@
 
 @end
 
-@implementation ViewController
+@implementation HomeViewController
 
 #pragma mark - MKMapView Delegate
 /**
@@ -225,7 +225,7 @@
 }
 
 - (void)dealloc {
-    DDLogDebug(@"ViewController is Dead");
+    DDLogDebug(@"HomeViewController is Dead");
 }
 
 #pragma mark - Lazy init

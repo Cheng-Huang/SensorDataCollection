@@ -10,7 +10,7 @@
 		14B7579029E35B827A7FBB27 /* libPods-SensorDataCollection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB5129E574024F60A1CA9B4 /* libPods-SensorDataCollection.a */; };
 		D236A1DE1F5D52B50093CD8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D236A1DD1F5D52B50093CD8B /* main.m */; };
 		D236A1E11F5D52B50093CD8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D236A1E01F5D52B50093CD8B /* AppDelegate.m */; };
-		D236A1E41F5D52B50093CD8B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236A1E31F5D52B50093CD8B /* ViewController.m */; };
+		D236A1E41F5D52B50093CD8B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236A1E31F5D52B50093CD8B /* HomeViewController.m */; };
 		D236A1E71F5D52B50093CD8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D236A1E51F5D52B50093CD8B /* Main.storyboard */; };
 		D236A1E91F5D52B50093CD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D236A1E81F5D52B50093CD8B /* Assets.xcassets */; };
 		D236A1EC1F5D52B50093CD8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D236A1EA1F5D52B50093CD8B /* LaunchScreen.storyboard */; };
@@ -31,8 +31,8 @@
 		D236A1DD1F5D52B50093CD8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D236A1DF1F5D52B50093CD8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D236A1E01F5D52B50093CD8B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D236A1E21F5D52B50093CD8B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D236A1E31F5D52B50093CD8B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D236A1E21F5D52B50093CD8B /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		D236A1E31F5D52B50093CD8B /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		D236A1E61F5D52B50093CD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D236A1E81F5D52B50093CD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D236A1EB1F5D52B50093CD8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,28 +96,8 @@
 		D236A1DB1F5D52B50093CD8B /* SensorDataCollection */ = {
 			isa = PBXGroup;
 			children = (
-				D236A1DF1F5D52B50093CD8B /* AppDelegate.h */,
-				D236A1E01F5D52B50093CD8B /* AppDelegate.m */,
-				D2502F671FB0B90E00581539 /* BaseViewController.h */,
-				D2502F681FB0B90E00581539 /* BaseViewController.m */,
-				D236A1E21F5D52B50093CD8B /* ViewController.h */,
-				D236A1E31F5D52B50093CD8B /* ViewController.m */,
-				D270CC4F1FB0ADA8003FC91E /* iQiYiPlayButton.h */,
-				D270CC501FB0ADAE003FC91E /* iQiYiPlayButton.m */,
-				D2B8FEE01FB0923C002DA84D /* HistoryViewController.h */,
-				D2B8FEE11FB0923C002DA84D /* HistoryViewController.m */,
-				D236A1F91F5D93260093CD8B /* SensorData.h */,
-				D236A1FA1F5D93260093CD8B /* SensorData.m */,
-				D236A1F61F5D8DB30093CD8B /* DataSaver.h */,
-				D236A1F71F5D8DB30093CD8B /* DataSaver.m */,
-				D2502F6A1FB0B97200581539 /* PrefixHeader.h */,
-				D236A1E51F5D52B50093CD8B /* Main.storyboard */,
-				D236A1E81F5D52B50093CD8B /* Assets.xcassets */,
-				D236A1EA1F5D52B50093CD8B /* LaunchScreen.storyboard */,
-				D236A1ED1F5D52B50093CD8B /* Info.plist */,
+				D2502F721FB1749800581539 /* Classes */,
 				D236A1DC1F5D52B50093CD8B /* Supporting Files */,
-				D2502F6B1FB15A7800581539 /* CatchCrash.h */,
-				D2502F6C1FB15A7800581539 /* CatchCrash.m */,
 			);
 			path = SensorDataCollection;
 			sourceTree = "<group>";
@@ -125,6 +105,9 @@
 		D236A1DC1F5D52B50093CD8B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D236A1ED1F5D52B50093CD8B /* Info.plist */,
+				D236A1E81F5D52B50093CD8B /* Assets.xcassets */,
+				D236A1EA1F5D52B50093CD8B /* LaunchScreen.storyboard */,
 				D236A1DD1F5D52B50093CD8B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -137,6 +120,71 @@
 				BAB5129E574024F60A1CA9B4 /* libPods-SensorDataCollection.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2502F6E1FB173C200581539 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				D236A1DF1F5D52B50093CD8B /* AppDelegate.h */,
+				D236A1E01F5D52B50093CD8B /* AppDelegate.m */,
+				D2502F6A1FB0B97200581539 /* PrefixHeader.h */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		D2502F6F1FB173FF00581539 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D2502F671FB0B90E00581539 /* BaseViewController.h */,
+				D2502F681FB0B90E00581539 /* BaseViewController.m */,
+				D236A1E21F5D52B50093CD8B /* HomeViewController.h */,
+				D236A1E31F5D52B50093CD8B /* HomeViewController.m */,
+				D2B8FEE01FB0923C002DA84D /* HistoryViewController.h */,
+				D2B8FEE11FB0923C002DA84D /* HistoryViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D2502F701FB1742C00581539 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D236A1E51F5D52B50093CD8B /* Main.storyboard */,
+				D270CC4F1FB0ADA8003FC91E /* iQiYiPlayButton.h */,
+				D270CC501FB0ADAE003FC91E /* iQiYiPlayButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D2502F711FB1744A00581539 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D236A1F91F5D93260093CD8B /* SensorData.h */,
+				D236A1FA1F5D93260093CD8B /* SensorData.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D2502F721FB1749800581539 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D2502F711FB1744A00581539 /* Model */,
+				D2502F701FB1742C00581539 /* View */,
+				D2502F6F1FB173FF00581539 /* ViewController */,
+				D2502F731FB174B600581539 /* Tools */,
+				D2502F6E1FB173C200581539 /* Others */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D2502F731FB174B600581539 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D236A1F61F5D8DB30093CD8B /* DataSaver.h */,
+				D236A1F71F5D8DB30093CD8B /* DataSaver.m */,
+				D2502F6B1FB15A7800581539 /* CatchCrash.h */,
+				D2502F6C1FB15A7800581539 /* CatchCrash.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2502F6D1FB15A7800581539 /* CatchCrash.m in Sources */,
-				D236A1E41F5D52B50093CD8B /* ViewController.m in Sources */,
+				D236A1E41F5D52B50093CD8B /* HomeViewController.m in Sources */,
 				D2502F691FB0B90E00581539 /* BaseViewController.m in Sources */,
 				D236A1FB1F5D93260093CD8B /* SensorData.m in Sources */,
 				D270CC511FB0ADAE003FC91E /* iQiYiPlayButton.m in Sources */,

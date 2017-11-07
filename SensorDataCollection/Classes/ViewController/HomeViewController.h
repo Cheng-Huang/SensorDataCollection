@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HomeViewController.h
 //  SensorDataCollection
 //
 //  Created by 成 黄 on 2017/9/4.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
-@interface ViewController : BaseViewController
+@interface HomeViewController : BaseViewController
 
 
 @end
